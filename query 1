@@ -1,0 +1,16 @@
+select s.student_id,upper(s.student_name),s.class,m.subject,m.marks
+from student s inner join student_marks m
+on s.student_id=m.student_id;
+
+select *from student;
+
+SELECT 
+    s.student_name,
+    m.marks,
+    CASE 
+        WHEN m.marks > 90 THEN 'A'
+        ELSE 'B'
+    END AS grade
+FROM student s 
+JOIN student_marks m 
+    ON s.student_id = m.student_id;
